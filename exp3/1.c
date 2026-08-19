@@ -31,25 +31,21 @@ int main() {
         num = -num;
     }
 
-    // Count and track trailing zeros before reversing
     while (num > 0 && num % 10 == 0) {
         trailing_zeros++;
         num /= 10;
     }
 
-    // Reverse the number to print left-to-right
     while (num > 0) {
         reversed = reversed * 10 + (num % 10);
         num /= 10;
     }
 
-    // Print digits from the reversed integer
     while (reversed > 0) {
         print_digit_word(reversed % 10);
         reversed /= 10;
     }
 
-    // Print any trailing zeros recorded earlier
     while (trailing_zeros > 0) {
         print_digit_word(0);
         trailing_zeros--;
