@@ -1,4 +1,3 @@
-// Program to generate a table of prime numbers
 #include <stdio.h>
 #include <math.h>
 int main(void)
