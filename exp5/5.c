@@ -48,12 +48,13 @@ int main(){
     int mat2[2][2] = {{3,6},{9,7}};
     int rows2 = sizeof(mat2)/sizeof(mat2[0]);
     int cols2 = sizeof(mat2[0])/sizeof(mat2[0][0]);
-    
+    printf("A = \n");    
     print_matrix(rows1,cols1,mat1);
-
+    printf("B = \n");
     print_matrix(rows2,cols2,mat2);
 
     int output[rows1][cols2];
     multiply_matrix(rows1,cols1,rows2,cols2,mat1,mat2,output);
+    printf("Output = \n");
     print_matrix(rows1,cols2,output);
 }
