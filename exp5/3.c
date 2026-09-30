@@ -36,9 +36,7 @@ void multiply_matrix(int rows1,int cols1,int rows2,int cols2,int mat1[rows1][col
 
                 
                 sum = sum + (mat1[m1r][i] * mat2[i][m2c]);
-                // printf("step %d %d  %d  %d \n",m1r,m2c,i,sum);
             }
-            // printf("%d %d    %d \n",m1r,m2c,sum);
             
             outmat[m1r][m2c] = sum;
             
@@ -49,7 +47,7 @@ void multiply_matrix(int rows1,int cols1,int rows2,int cols2,int mat1[rows1][col
 }
 
 int main(){
-    int vec1[3][1];// = {{1},{2},{3}};
+    int vec1[3][1];
     int vec2[3][1] ;
 
     printf("v1 = <x,y,z> \n");
@@ -75,9 +73,12 @@ int main(){
     int outerprod[1][1];
 
     transpose_matrix(3,1,vec1,vec1t);
+    printf("vector 1 \n");
     print_matrix(1,3,vec1t);
+    printf("vector 2 transposed \n");
     print_matrix(3,1,vec2);
     multiply_matrix(1,3,3,1,vec1t,vec2,outerprod);
+    printf("v1 dot v2 = ");
     print_matrix(1,1,outerprod);
 
     printf("Result : %d \n",outerprod[0][0]);
