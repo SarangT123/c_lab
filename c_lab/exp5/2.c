@@ -37,10 +37,20 @@ int multiply_matrix(int rows1, int cols1, int rows2, int cols2,int mat1[rows1][c
 }
 
 int main(void) {
-    int vec1[3][1] = {{1}, {2}, {3}};
-    int vec2[3][1] = {{4}, {5}, {6}};
+    int vec1[3][1];
+    int vec2[3][1];
     int vec2t[1][3];
     int outerprod[3][3];
+
+    printf("Enter 3 elements for vec1:\n");
+    for (int i = 0; i < 3; i++) {
+        scanf("%d", &vec1[i][0]);
+    }
+
+    printf("Enter 3 elements for vec2:\n");
+    for (int i = 0; i < 3; i++) {
+        scanf("%d", &vec2[i][0]);
+    }
 
     transpose_matrix(3, 1, vec2, vec2t);
 

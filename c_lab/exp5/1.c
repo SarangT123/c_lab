@@ -11,7 +11,7 @@ void print_matrix(int rows, int columns, int matrix[rows][columns]) {
     printf("\n");
 }
 
-void transpose_matrix(int rows, int columns, int mat1[rows][columns],int mat2[columns][rows]) {
+void transpose_matrix(int rows, int columns, int mat1[rows][columns], int mat2[columns][rows]) {
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < columns; j++) {
             mat2[j][i] = mat1[i][j];
@@ -20,15 +20,31 @@ void transpose_matrix(int rows, int columns, int mat1[rows][columns],int mat2[co
 }
 
 int main(void) {
-    int mat1[3][2] = {{1, 2}, {4, 5}, {7, 8}};
-    int rows = 3;
-    int cols = 2;
+    int rows;
+    int cols;
+    
+    printf("Enter number of rows: ");
+    scanf("%d", &rows);
+    printf("Enter number of columns: ");
+    scanf("%d", &cols);
+
+    int mat1[rows][cols];
     int mat2[cols][rows];
 
-    printf("Original:\n");
+    printf("Enter the matrix elements (row by row):\n");
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            scanf("%d", &mat1[i][j]);
+        }
+    }
+
+    printf("\nOriginal:\n");
     print_matrix(rows, cols, mat1);
+    
     transpose_matrix(rows, cols, mat1, mat2);
+    
     printf("Transpose:\n");
     print_matrix(cols, rows, mat2);
+    
     return 0;
 }

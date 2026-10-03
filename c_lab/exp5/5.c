@@ -11,7 +11,7 @@ void print_matrix(int rows, int columns, int matrix[rows][columns]) {
     printf("\n");
 }
 
-int multiply_matrix(int rows1, int cols1, int rows2, int cols2,int mat1[rows1][cols1], int mat2[rows2][cols2],int outmat[rows1][cols2]) {
+int multiply_matrix(int rows1, int cols1, int rows2, int cols2, int mat1[rows1][cols1], int mat2[rows2][cols2], int outmat[rows1][cols2]) {
     if (rows2 != cols1) {
         printf("Multiplication not possible\n");
         return 1;
@@ -29,12 +29,29 @@ int multiply_matrix(int rows1, int cols1, int rows2, int cols2,int mat1[rows1][c
 }
 
 int main(void) {
-    int mat1[3][2] = {{1, 2}, {4, 5}, {7, 8}};
-    int rows1 = sizeof(mat1) / sizeof(mat1[0]);
-    int cols1 = sizeof(mat1[0]) / sizeof(mat1[0][0]);
-    int mat2[2][2] = {{3, 6}, {9, 7}};
-    int rows2 = sizeof(mat2) / sizeof(mat2[0]);
-    int cols2 = sizeof(mat2[0]) / sizeof(mat2[0][0]);
+    int rows1, cols1;
+    printf("Enter rows and columns for Matrix A: ");
+    scanf("%d %d", &rows1, &cols1);
+
+    int mat1[rows1][cols1];
+    printf("Enter elements for Matrix A (%dx%d):\n", rows1, cols1);
+    for (int i = 0; i < rows1; i++) {
+        for (int j = 0; j < cols1; j++) {
+            scanf("%d", &mat1[i][j]);
+        }
+    }
+
+    int rows2, cols2;
+    printf("Enter rows and columns for Matrix B: ");
+    scanf("%d %d", &rows2, &cols2);
+
+    int mat2[rows2][cols2];
+    printf("Enter elements for Matrix B (%dx%d):\n", rows2, cols2);
+    for (int i = 0; i < rows2; i++) {
+        for (int j = 0; j < cols2; j++) {
+            scanf("%d", &mat2[i][j]);
+        }
+    }
 
     printf("A =\n");
     print_matrix(rows1, cols1, mat1);

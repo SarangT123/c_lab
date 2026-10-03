@@ -48,8 +48,14 @@ struct date next_date(struct date d) {
 }
 
 int main() {
-    struct date d = {29,2,2000};
+    struct date d;
 
+    printf("Enter day: ");
+    scanf("%d", &d.day);
+    printf("Enter month: ");
+    scanf("%d", &d.month);
+    printf("Enter year: ");
+    scanf("%d", &d.year);
 
     if (!is_valid(d)) {
         printf("%02d-%02d-%04d: invalid date\n", d.day, d.month, d.year);
